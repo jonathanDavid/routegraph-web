@@ -10,8 +10,8 @@ const go = (from: string, to: string, mode: 'hops' | 'km' | 'min') =>
 describe('demo dijkstra over the real graph', () => {
   it('matches the seeded Neo4j smoke answer: Bogotá→Santa Marta by km', () => {
     const r = go('Bogotá', 'Santa Marta', 'km')!;
-    expect(r.via.map((n) => n.name)).toEqual(['Bogotá', 'Tunja', 'Bucaramanga', 'Valledupar', 'Santa Marta']);
-    expect(Math.round(r.totalKm)).toBe(1145);
+    expect(r.via.map((n) => n.name)).toEqual(['Bogotá', 'Tunja', 'Bucaramanga', 'Aguachica', 'Bosconia', 'Ciénaga', 'Santa Marta']);
+    expect(Math.round(r.totalKm)).toBe(971); // the real Ruta del Sol corridor
   });
 
   it('adjacent cities route directly', () => {
@@ -34,8 +34,13 @@ describe('demo dijkstra over the real graph', () => {
     expect(ab.via.map((n) => n.name)).toEqual([...ba.via.map((n) => n.name)].reverse());
   });
 
-  it('every city can reach every other city', () => {
-    const ids = graph.nodes.map((n) => n.id);
+  it('every ROAD-CONNECTED city can reach every other; roadless capitals cannot', () => {
+    const roadless = graph.nodes.filter((n) => n.roadless).map((n) => n.id);
+    expect(roadless.length).toBe(4); // Leticia, Mitú, Inírida, Puerto Carreño
+    for (const id of roadless) {
+      expect(shortestRoute(graph, byName.get('Bogotá')!, id, 'km')).toBeNull();
+    }
+    const ids = graph.nodes.filter((n) => !n.roadless).map((n) => n.id);
     const origin = ids[0];
     for (const to of ids.slice(1)) {
       expect(shortestRoute(graph, origin, to, 'km'), `unreachable ${to}`).not.toBeNull();

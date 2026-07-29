@@ -36,7 +36,7 @@ function graphToGeoJSON(graph: RoadGraph) {
       return {
         type: 'Feature' as const,
         properties: { key: [e.from, e.to].sort().join('|'), route: e.route, km: e.km },
-        geometry: { type: 'LineString' as const, coordinates: [[a.lng, a.lat], [b.lng, b.lat]] },
+        geometry: { type: 'LineString' as const, coordinates: e.path ?? [[a.lng, a.lat], [b.lng, b.lat]] },
       };
     }),
   };
@@ -44,7 +44,7 @@ function graphToGeoJSON(graph: RoadGraph) {
     type: 'FeatureCollection' as const,
     features: graph.nodes.map((n) => ({
       type: 'Feature' as const,
-      properties: { id: n.id, name: n.name, pop: n.pop },
+      properties: { id: n.id, name: n.name, pop: n.pop, roadless: n.roadless ?? false },
       geometry: { type: 'Point' as const, coordinates: [n.lng, n.lat] },
       id: n.id,
     })),
@@ -107,10 +107,11 @@ export function MapView({ graph, route, onPickCity, originId, destId }: Props) {
             'case',
             ['boolean', ['feature-state', 'endpoint'], false], '#f7b733',
             ['boolean', ['feature-state', 'onRoute'], false], '#f2e8d5',
+            ['get', 'roadless'], '#17191d',
             '#6d7681',
           ],
-          'circle-stroke-color': BG,
-          'circle-stroke-width': 1.5,
+          'circle-stroke-color': ['case', ['get', 'roadless'], '#8a6d3b', BG],
+          'circle-stroke-width': ['case', ['get', 'roadless'], 1.8, 1.5],
         },
       });
 
@@ -122,13 +123,14 @@ export function MapView({ graph, route, onPickCity, originId, destId }: Props) {
       map.on('mouseleave', 'city-dots', () => (map.getCanvas().style.cursor = ''));
 
       // City labels: DOM markers for the 14 biggest — key-less, no glyph server.
-      [...graph.nodes]
-        .sort((a, b) => b.pop - a.pop)
-        .slice(0, 14)
-        .forEach((n) => {
+      const labelled = [
+        ...[...graph.nodes].filter((n) => !n.roadless).sort((a, b) => b.pop - a.pop).slice(0, 14),
+        ...graph.nodes.filter((n) => n.roadless), // always name the roadless capitals
+      ];
+      labelled.forEach((n) => {
           const el = document.createElement('div');
-          el.className = 'city-label';
-          el.textContent = n.name;
+          el.className = n.roadless ? 'city-label city-label--roadless' : 'city-label';
+          el.textContent = n.roadless ? `${n.name} ✈` : n.name;
           new maplibregl.Marker({ element: el, anchor: 'left', offset: [8, 0] })
             .setLngLat([n.lng, n.lat])
             .addTo(map);

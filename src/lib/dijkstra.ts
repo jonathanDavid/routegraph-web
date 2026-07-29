@@ -11,6 +11,8 @@ export interface GraphNode {
   lat: number;
   lng: number;
   pop: number;
+  /** True for Amazon-basin capitals with no road connection (air/river only). */
+  roadless?: boolean;
 }
 
 export interface GraphEdge {
@@ -19,6 +21,8 @@ export interface GraphEdge {
   route: string;
   km: number;
   min: number;
+  /** Real road polyline from OSRM ([lng,lat][]), for map rendering. */
+  path?: [number, number][];
 }
 
 export interface RoadGraph {

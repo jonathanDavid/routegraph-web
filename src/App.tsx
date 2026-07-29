@@ -80,7 +80,7 @@ export default function App() {
       <aside className="panel">
         <header>
           <h1>Colombia Route Graph</h1>
-          <p className="sub">50 cities · 67 real highway edges · Neo4j property graph</p>
+          <p className="sub">{graph.nodes.length} cities · {graph.edges.length} real highway edges · Neo4j property graph</p>
         </header>
 
         <section className="card">
@@ -123,7 +123,18 @@ export default function App() {
             </ol>
           </section>
         ) : (
-          <section className="card result"><p className="hint">No route found.</p></section>
+          <section className="card result">
+            <p className="hint">
+              {(() => {
+                const roadless = [originId, destId]
+                  .map((id) => graph.nodes.find((n) => n.id === id))
+                  .filter((n) => n?.roadless);
+                return roadless.length > 0
+                  ? `No road route exists: ${roadless.map((n) => n!.name).join(' and ')} ${roadless.length > 1 ? 'have' : 'has'} no connection to the national road network — access is by air or river only. That empty southeast on the map is real Colombian geography, not missing data.`
+                  : 'No route found.';
+              })()}
+            </p>
+          </section>
         )}
 
         <section className="card cypher">

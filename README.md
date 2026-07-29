@@ -22,7 +22,7 @@ database fits routing.
   panel and the SAME Cypher runs for real over bolt-in-WebSocket, straight
   from the browser — no API server. Credentials live only in your
   localStorage. Tests pin both engines to identical answers
-  (Bogotá→Santa Marta = Tunja → Bucaramanga → Valledupar, 1,145 km).
+  (Bogotá→Santa Marta = the real Ruta del Sol via Aguachica–Bosconia–Ciénaga, 971 km). The four Amazon-basin capitals (Leticia, Mitú, Inírida, Puerto Carreño) appear as roadless ✈ nodes — routing to them explains honestly that no road exists.
 
 ## Run it
 
