@@ -1,0 +1,881 @@
+{
+  "generatedAt": "2026-07-29T01:58:13.070Z",
+  "sources": {
+    "cities": "DANE DIVIPOLA codes; city-center coordinates (WGS84)",
+    "roads": "Curated Rutas Nacionales corridors (INVIAS nomenclature)",
+    "metrics": "OSRM public server (OpenStreetMap) driving distance/duration"
+  },
+  "nodes": [
+    {
+      "id": "11001",
+      "name": "Bogotá",
+      "dept": "Cundinamarca (D.C.)",
+      "lat": 4.711,
+      "lng": -74.0721,
+      "pop": 7900000
+    },
+    {
+      "id": "05001",
+      "name": "Medellín",
+      "dept": "Antioquia",
+      "lat": 6.2518,
+      "lng": -75.5636,
+      "pop": 2600000
+    },
+    {
+      "id": "76001",
+      "name": "Cali",
+      "dept": "Valle del Cauca",
+      "lat": 3.4516,
+      "lng": -76.532,
+      "pop": 2300000
+    },
+    {
+      "id": "08001",
+      "name": "Barranquilla",
+      "dept": "Atlántico",
+      "lat": 10.9685,
+      "lng": -74.7813,
+      "pop": 1300000
+    },
+    {
+      "id": "13001",
+      "name": "Cartagena",
+      "dept": "Bolívar",
+      "lat": 10.391,
+      "lng": -75.4794,
+      "pop": 1050000
+    },
+    {
+      "id": "68001",
+      "name": "Bucaramanga",
+      "dept": "Santander",
+      "lat": 7.1193,
+      "lng": -73.1227,
+      "pop": 610000
+    },
+    {
+      "id": "54001",
+      "name": "Cúcuta",
+      "dept": "Norte de Santander",
+      "lat": 7.8939,
+      "lng": -72.5078,
+      "pop": 780000
+    },
+    {
+      "id": "66001",
+      "name": "Pereira",
+      "dept": "Risaralda",
+      "lat": 4.8087,
+      "lng": -75.6906,
+      "pop": 480000
+    },
+    {
+      "id": "17001",
+      "name": "Manizales",
+      "dept": "Caldas",
+      "lat": 5.0703,
+      "lng": -75.5138,
+      "pop": 435000
+    },
+    {
+      "id": "63001",
+      "name": "Armenia",
+      "dept": "Quindío",
+      "lat": 4.5339,
+      "lng": -75.6811,
+      "pop": 305000
+    },
+    {
+      "id": "73001",
+      "name": "Ibagué",
+      "dept": "Tolima",
+      "lat": 4.4389,
+      "lng": -75.2322,
+      "pop": 540000
+    },
+    {
+      "id": "41001",
+      "name": "Neiva",
+      "dept": "Huila",
+      "lat": 2.9273,
+      "lng": -75.2819,
+      "pop": 350000
+    },
+    {
+      "id": "52001",
+      "name": "Pasto",
+      "dept": "Nariño",
+      "lat": 1.2136,
+      "lng": -77.2811,
+      "pop": 400000
+    },
+    {
+      "id": "19001",
+      "name": "Popayán",
+      "dept": "Cauca",
+      "lat": 2.4448,
+      "lng": -76.6147,
+      "pop": 320000
+    },
+    {
+      "id": "50001",
+      "name": "Villavicencio",
+      "dept": "Meta",
+      "lat": 4.142,
+      "lng": -73.6266,
+      "pop": 530000
+    },
+    {
+      "id": "15001",
+      "name": "Tunja",
+      "dept": "Boyacá",
+      "lat": 5.5353,
+      "lng": -73.3678,
+      "pop": 180000
+    },
+    {
+      "id": "23001",
+      "name": "Montería",
+      "dept": "Córdoba",
+      "lat": 8.7479,
+      "lng": -75.8814,
+      "pop": 460000
+    },
+    {
+      "id": "70001",
+      "name": "Sincelejo",
+      "dept": "Sucre",
+      "lat": 9.3047,
+      "lng": -75.3978,
+      "pop": 290000
+    },
+    {
+      "id": "47001",
+      "name": "Santa Marta",
+      "dept": "Magdalena",
+      "lat": 11.2408,
+      "lng": -74.199,
+      "pop": 540000
+    },
+    {
+      "id": "20001",
+      "name": "Valledupar",
+      "dept": "Cesar",
+      "lat": 10.4631,
+      "lng": -73.2532,
+      "pop": 490000
+    },
+    {
+      "id": "44001",
+      "name": "Riohacha",
+      "dept": "La Guajira",
+      "lat": 11.5444,
+      "lng": -72.9072,
+      "pop": 200000
+    },
+    {
+      "id": "18001",
+      "name": "Florencia",
+      "dept": "Caquetá",
+      "lat": 1.6144,
+      "lng": -75.6062,
+      "pop": 180000
+    },
+    {
+      "id": "86001",
+      "name": "Mocoa",
+      "dept": "Putumayo",
+      "lat": 1.147,
+      "lng": -76.6481,
+      "pop": 45000
+    },
+    {
+      "id": "27001",
+      "name": "Quibdó",
+      "dept": "Chocó",
+      "lat": 5.6947,
+      "lng": -76.6611,
+      "pop": 130000
+    },
+    {
+      "id": "85001",
+      "name": "Yopal",
+      "dept": "Casanare",
+      "lat": 5.3378,
+      "lng": -72.3959,
+      "pop": 170000
+    },
+    {
+      "id": "81001",
+      "name": "Arauca",
+      "dept": "Arauca",
+      "lat": 7.0847,
+      "lng": -70.7591,
+      "pop": 90000
+    },
+    {
+      "id": "95001",
+      "name": "San José del Guaviare",
+      "dept": "Guaviare",
+      "lat": 2.5729,
+      "lng": -72.6459,
+      "pop": 45000
+    },
+    {
+      "id": "05045",
+      "name": "Apartadó",
+      "dept": "Antioquia (Urabá)",
+      "lat": 7.8826,
+      "lng": -76.6256,
+      "pop": 200000
+    },
+    {
+      "id": "05615",
+      "name": "Rionegro",
+      "dept": "Antioquia",
+      "lat": 6.1536,
+      "lng": -75.3742,
+      "pop": 140000
+    },
+    {
+      "id": "68081",
+      "name": "Barrancabermeja",
+      "dept": "Santander",
+      "lat": 7.0653,
+      "lng": -73.8547,
+      "pop": 210000
+    },
+    {
+      "id": "73449",
+      "name": "Melgar",
+      "dept": "Tolima",
+      "lat": 4.2038,
+      "lng": -74.6413,
+      "pop": 40000
+    },
+    {
+      "id": "25290",
+      "name": "Fusagasugá",
+      "dept": "Cundinamarca",
+      "lat": 4.3455,
+      "lng": -74.3618,
+      "pop": 140000
+    },
+    {
+      "id": "76520",
+      "name": "Palmira",
+      "dept": "Valle del Cauca",
+      "lat": 3.5394,
+      "lng": -76.3036,
+      "pop": 310000
+    },
+    {
+      "id": "76892",
+      "name": "Yumbo",
+      "dept": "Valle del Cauca",
+      "lat": 3.5849,
+      "lng": -76.4959,
+      "pop": 130000
+    },
+    {
+      "id": "76109",
+      "name": "Buenaventura",
+      "dept": "Valle del Cauca",
+      "lat": 3.8801,
+      "lng": -77.0312,
+      "pop": 310000
+    },
+    {
+      "id": "76834",
+      "name": "Tuluá",
+      "dept": "Valle del Cauca",
+      "lat": 4.0847,
+      "lng": -76.1954,
+      "pop": 220000
+    },
+    {
+      "id": "05837",
+      "name": "Turbo",
+      "dept": "Antioquia (Urabá)",
+      "lat": 8.093,
+      "lng": -76.7284,
+      "pop": 170000
+    },
+    {
+      "id": "05579",
+      "name": "Puerto Berrío",
+      "dept": "Antioquia",
+      "lat": 6.4899,
+      "lng": -74.403,
+      "pop": 50000
+    },
+    {
+      "id": "05154",
+      "name": "Caucasia",
+      "dept": "Antioquia (Bajo Cauca)",
+      "lat": 7.9863,
+      "lng": -75.1976,
+      "pop": 125000
+    },
+    {
+      "id": "23417",
+      "name": "Lorica",
+      "dept": "Córdoba",
+      "lat": 9.2394,
+      "lng": -75.8139,
+      "pop": 120000
+    },
+    {
+      "id": "13430",
+      "name": "Magangué",
+      "dept": "Bolívar",
+      "lat": 9.241,
+      "lng": -74.7547,
+      "pop": 125000
+    },
+    {
+      "id": "47189",
+      "name": "Ciénaga",
+      "dept": "Magdalena",
+      "lat": 11.0071,
+      "lng": -74.247,
+      "pop": 105000
+    },
+    {
+      "id": "54518",
+      "name": "Pamplona",
+      "dept": "Norte de Santander",
+      "lat": 7.3784,
+      "lng": -72.6478,
+      "pop": 60000
+    },
+    {
+      "id": "15759",
+      "name": "Sogamoso",
+      "dept": "Boyacá",
+      "lat": 5.7143,
+      "lng": -72.9339,
+      "pop": 115000
+    },
+    {
+      "id": "41396",
+      "name": "La Plata",
+      "dept": "Huila",
+      "lat": 2.3936,
+      "lng": -75.8917,
+      "pop": 60000
+    },
+    {
+      "id": "41551",
+      "name": "Pitalito",
+      "dept": "Huila",
+      "lat": 1.8536,
+      "lng": -76.0512,
+      "pop": 135000
+    },
+    {
+      "id": "52356",
+      "name": "Ipiales",
+      "dept": "Nariño (frontera)",
+      "lat": 0.8302,
+      "lng": -77.6444,
+      "pop": 135000
+    },
+    {
+      "id": "19698",
+      "name": "Santander de Quilichao",
+      "dept": "Cauca",
+      "lat": 3.0092,
+      "lng": -76.4841,
+      "pop": 100000
+    },
+    {
+      "id": "25307",
+      "name": "Girardot",
+      "dept": "Cundinamarca",
+      "lat": 4.3036,
+      "lng": -74.8006,
+      "pop": 110000
+    },
+    {
+      "id": "17380",
+      "name": "La Dorada",
+      "dept": "Caldas",
+      "lat": 5.4489,
+      "lng": -74.666,
+      "pop": 80000
+    }
+  ],
+  "edges": [
+    {
+      "from": "11001",
+      "to": "15001",
+      "route": "RN55 (Bogotá–Tunja)",
+      "km": 137.3,
+      "min": 159
+    },
+    {
+      "from": "15001",
+      "to": "15759",
+      "route": "RN62 (Tunja–Sogamoso)",
+      "km": 72.3,
+      "min": 95
+    },
+    {
+      "from": "15001",
+      "to": "68001",
+      "route": "RN45A (Tunja–San Gil–Bucaramanga)",
+      "km": 283.5,
+      "min": 266
+    },
+    {
+      "from": "68001",
+      "to": "54518",
+      "route": "RN66/55 (Bucaramanga–Pamplona)",
+      "km": 124.1,
+      "min": 100
+    },
+    {
+      "from": "54518",
+      "to": "54001",
+      "route": "RN55 (Pamplona–Cúcuta)",
+      "km": 75.5,
+      "min": 56
+    },
+    {
+      "from": "68001",
+      "to": "68081",
+      "route": "RN66 (Bucaramanga–Barrancabermeja)",
+      "km": 120.4,
+      "min": 96
+    },
+    {
+      "from": "68081",
+      "to": "05579",
+      "route": "RN62/45 (Barrancabermeja–Puerto Berrío)",
+      "km": 128.6,
+      "min": 103
+    },
+    {
+      "from": "05579",
+      "to": "05001",
+      "route": "RN62 (Puerto Berrío–Medellín)",
+      "km": 171,
+      "min": 135
+    },
+    {
+      "from": "68001",
+      "to": "20001",
+      "route": "RN45/49 (Bucaramanga–Valledupar, vía San Alberto)",
+      "km": 471.8,
+      "min": 370
+    },
+    {
+      "from": "20001",
+      "to": "47001",
+      "route": "RN80 (Valledupar–Santa Marta, vía Bosconia)",
+      "km": 252.4,
+      "min": 184
+    },
+    {
+      "from": "20001",
+      "to": "44001",
+      "route": "RN88 (Valledupar–Riohacha)",
+      "km": 193.2,
+      "min": 162
+    },
+    {
+      "from": "47001",
+      "to": "44001",
+      "route": "RN90 (Santa Marta–Riohacha)",
+      "km": 171.3,
+      "min": 130
+    },
+    {
+      "from": "47001",
+      "to": "47189",
+      "route": "RN90 (Santa Marta–Ciénaga)",
+      "km": 33.6,
+      "min": 26
+    },
+    {
+      "from": "47189",
+      "to": "08001",
+      "route": "RN90 (Ciénaga–Barranquilla)",
+      "km": 65.8,
+      "min": 52
+    },
+    {
+      "from": "08001",
+      "to": "13001",
+      "route": "RN90A (Barranquilla–Cartagena)",
+      "km": 130.1,
+      "min": 104
+    },
+    {
+      "from": "13001",
+      "to": "70001",
+      "route": "RN25 (Cartagena–Sincelejo)",
+      "km": 180.9,
+      "min": 134
+    },
+    {
+      "from": "70001",
+      "to": "23001",
+      "route": "RN25 (Sincelejo–Montería, vía Planeta Rica)",
+      "km": 118.6,
+      "min": 88
+    },
+    {
+      "from": "70001",
+      "to": "13430",
+      "route": "RN78 (Sincelejo–Magangué)",
+      "km": 92.9,
+      "min": 68
+    },
+    {
+      "from": "23001",
+      "to": "23417",
+      "route": "RN23 (Montería–Lorica)",
+      "km": 61.7,
+      "min": 56
+    },
+    {
+      "from": "23417",
+      "to": "13001",
+      "route": "RN90 (Lorica–Cartagena, vía Coveñas)",
+      "km": 183.6,
+      "min": 170
+    },
+    {
+      "from": "23001",
+      "to": "05154",
+      "route": "RN23/25 (Montería–Caucasia)",
+      "km": 120.1,
+      "min": 89
+    },
+    {
+      "from": "05154",
+      "to": "05001",
+      "route": "RN25 (Caucasia–Medellín)",
+      "km": 283.4,
+      "min": 278
+    },
+    {
+      "from": "05001",
+      "to": "05045",
+      "route": "RN62 (Medellín–Apartadó, vía al Mar)",
+      "km": 292.8,
+      "min": 220
+    },
+    {
+      "from": "05045",
+      "to": "05837",
+      "route": "RN62 (Apartadó–Turbo)",
+      "km": 32.2,
+      "min": 28
+    },
+    {
+      "from": "23001",
+      "to": "05045",
+      "route": "RN62/23 (Montería–Apartadó, vía Arboletes)",
+      "km": 218.1,
+      "min": 170
+    },
+    {
+      "from": "05001",
+      "to": "05615",
+      "route": "RN60 (Medellín–Rionegro)",
+      "km": 33.3,
+      "min": 46
+    },
+    {
+      "from": "05615",
+      "to": "17380",
+      "route": "RN60/45 (Rionegro–La Dorada, autopista Medellín–Bogotá)",
+      "km": 203.5,
+      "min": 197
+    },
+    {
+      "from": "17380",
+      "to": "11001",
+      "route": "RN50/56 (La Dorada–Bogotá, vía Honda–Villeta)",
+      "km": 183.5,
+      "min": 225
+    },
+    {
+      "from": "17380",
+      "to": "17001",
+      "route": "RN50 (La Dorada–Manizales, vía Mariquita)",
+      "km": 216.5,
+      "min": 211
+    },
+    {
+      "from": "05001",
+      "to": "17001",
+      "route": "RN25 (Medellín–Manizales, vía La Pintada)",
+      "km": 219.6,
+      "min": 172
+    },
+    {
+      "from": "17001",
+      "to": "66001",
+      "route": "RN25 (Manizales–Pereira)",
+      "km": 49.9,
+      "min": 50
+    },
+    {
+      "from": "66001",
+      "to": "63001",
+      "route": "RN29 (Pereira–Armenia)",
+      "km": 45.9,
+      "min": 58
+    },
+    {
+      "from": "66001",
+      "to": "76834",
+      "route": "RN25 (Pereira–Tuluá, vía La Victoria)",
+      "km": 117.8,
+      "min": 110
+    },
+    {
+      "from": "63001",
+      "to": "73001",
+      "route": "RN40 (Armenia–Ibagué, túnel de La Línea)",
+      "km": 73.1,
+      "min": 81
+    },
+    {
+      "from": "73001",
+      "to": "25307",
+      "route": "RN40 (Ibagué–Girardot)",
+      "km": 66.6,
+      "min": 70
+    },
+    {
+      "from": "25307",
+      "to": "73449",
+      "route": "RN40 (Girardot–Melgar)",
+      "km": 25,
+      "min": 28
+    },
+    {
+      "from": "73449",
+      "to": "25290",
+      "route": "RN40 (Melgar–Fusagasugá, vía El Boquerón)",
+      "km": 45.1,
+      "min": 48
+    },
+    {
+      "from": "25290",
+      "to": "11001",
+      "route": "RN40 (Fusagasugá–Bogotá)",
+      "km": 71.1,
+      "min": 71
+    },
+    {
+      "from": "25307",
+      "to": "41001",
+      "route": "RN45 (Girardot–Neiva)",
+      "km": 177.5,
+      "min": 139
+    },
+    {
+      "from": "41001",
+      "to": "41396",
+      "route": "RN37 (Neiva–La Plata)",
+      "km": 123.8,
+      "min": 102
+    },
+    {
+      "from": "41396",
+      "to": "19001",
+      "route": "RN26 (La Plata–Popayán)",
+      "km": 147,
+      "min": 182
+    },
+    {
+      "from": "41001",
+      "to": "41551",
+      "route": "RN45 (Neiva–Pitalito)",
+      "km": 187,
+      "min": 137
+    },
+    {
+      "from": "41551",
+      "to": "86001",
+      "route": "RN45 (Pitalito–Mocoa)",
+      "km": 133.3,
+      "min": 103
+    },
+    {
+      "from": "41551",
+      "to": "18001",
+      "route": "RN20/45 (Pitalito–Florencia, vía Suaza–Altamira)",
+      "km": 112.6,
+      "min": 98
+    },
+    {
+      "from": "86001",
+      "to": "52001",
+      "route": "RN10 (Mocoa–Pasto, vía San Francisco)",
+      "km": 144.6,
+      "min": 169
+    },
+    {
+      "from": "52001",
+      "to": "52356",
+      "route": "RN25 (Pasto–Ipiales, Panamericana)",
+      "km": 82.8,
+      "min": 75
+    },
+    {
+      "from": "52001",
+      "to": "19001",
+      "route": "RN25 (Pasto–Popayán, Panamericana)",
+      "km": 252.8,
+      "min": 333
+    },
+    {
+      "from": "19001",
+      "to": "19698",
+      "route": "RN25 (Popayán–Santander de Quilichao)",
+      "km": 82.3,
+      "min": 105
+    },
+    {
+      "from": "19698",
+      "to": "76001",
+      "route": "RN25 (Santander de Quilichao–Cali)",
+      "km": 53.9,
+      "min": 58
+    },
+    {
+      "from": "76001",
+      "to": "76520",
+      "route": "RN40 (Cali–Palmira)",
+      "km": 29.7,
+      "min": 35
+    },
+    {
+      "from": "76001",
+      "to": "76892",
+      "route": "RN25 (Cali–Yumbo)",
+      "km": 17.2,
+      "min": 30
+    },
+    {
+      "from": "76892",
+      "to": "76109",
+      "route": "RN40 (Yumbo–Buenaventura, vía Loboguerrero)",
+      "km": 104.9,
+      "min": 124
+    },
+    {
+      "from": "76520",
+      "to": "76834",
+      "route": "RN25 (Palmira–Tuluá)",
+      "km": 72.2,
+      "min": 64
+    },
+    {
+      "from": "11001",
+      "to": "50001",
+      "route": "RN40 (Bogotá–Villavicencio)",
+      "km": 125,
+      "min": 107
+    },
+    {
+      "from": "50001",
+      "to": "85001",
+      "route": "RN65 (Villavicencio–Yopal, Marginal de la Selva)",
+      "km": 264,
+      "min": 195
+    },
+    {
+      "from": "85001",
+      "to": "81001",
+      "route": "RN65 (Yopal–Arauca, vía Tame)",
+      "km": 366.6,
+      "min": 342
+    },
+    {
+      "from": "15759",
+      "to": "85001",
+      "route": "RN62 (Sogamoso–Yopal, vía El Crucero)",
+      "km": 147,
+      "min": 143
+    },
+    {
+      "from": "50001",
+      "to": "95001",
+      "route": "RN65 (Villavicencio–San José del Guaviare, vía Granada)",
+      "km": 284.2,
+      "min": 301
+    },
+    {
+      "from": "18001",
+      "to": "41001",
+      "route": "RN20/45 (Florencia–Neiva, vía Suaza)",
+      "km": 236.3,
+      "min": 172
+    },
+    {
+      "from": "05001",
+      "to": "27001",
+      "route": "RN62 (Medellín–Quibdó, vía Ciudad Bolívar)",
+      "km": 225.3,
+      "min": 239
+    },
+    {
+      "from": "27001",
+      "to": "66001",
+      "route": "RN50 (Quibdó–Pereira, vía Tadó–Santa Cecilia)",
+      "km": 325.5,
+      "min": 306
+    },
+    {
+      "from": "13430",
+      "to": "13001",
+      "route": "RN25/78 (Magangué–Cartagena)",
+      "km": 215.8,
+      "min": 160
+    },
+    {
+      "from": "20001",
+      "to": "68081",
+      "route": "RN45 (Valledupar–Barrancabermeja corridor, Ruta del Sol)",
+      "km": 492.6,
+      "min": 357
+    },
+    {
+      "from": "76834",
+      "to": "76001",
+      "route": "RN25 (Tuluá–Cali)",
+      "km": 90.6,
+      "min": 92
+    },
+    {
+      "from": "63001",
+      "to": "76834",
+      "route": "RN29/25 (Armenia–Tuluá, vía La Paila)",
+      "km": 92.5,
+      "min": 96
+    },
+    {
+      "from": "54001",
+      "to": "81001",
+      "route": "RN66 (Cúcuta–Arauca corridor, vía Saravena)",
+      "km": 392.3,
+      "min": 414
+    },
+    {
+      "from": "17001",
+      "to": "73001",
+      "route": "RN43/50 (Manizales–Ibagué, vía Fresno–Mariquita)",
+      "km": 162.2,
+      "min": 175
+    }
+  ]
+}

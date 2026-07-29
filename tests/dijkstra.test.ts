@@ -1,0 +1,50 @@
+import { describe, it, expect } from 'vitest';
+import { shortestRoute, type RoadGraph } from '../src/lib/dijkstra';
+import rawGraph from '../src/data/graph.json';
+
+const graph = rawGraph as unknown as RoadGraph;
+const byName = new Map(graph.nodes.map((n) => [n.name, n.id]));
+const go = (from: string, to: string, mode: 'hops' | 'km' | 'min') =>
+  shortestRoute(graph, byName.get(from)!, byName.get(to)!, mode);
+
+describe('demo dijkstra over the real graph', () => {
+  it('matches the seeded Neo4j smoke answer: Bogotá→Santa Marta by km', () => {
+    const r = go('Bogotá', 'Santa Marta', 'km')!;
+    expect(r.via.map((n) => n.name)).toEqual(['Bogotá', 'Tunja', 'Bucaramanga', 'Valledupar', 'Santa Marta']);
+    expect(Math.round(r.totalKm)).toBe(1145);
+  });
+
+  it('adjacent cities route directly', () => {
+    const r = go('Cali', 'Palmira', 'km')!;
+    expect(r.hops).toBe(1);
+    expect(r.legs[0].route).toContain('RN40');
+  });
+
+  it('mode changes the answer: hops vs km can differ', () => {
+    const hops = go('Bogotá', 'Medellín', 'hops')!;
+    const km = go('Bogotá', 'Medellín', 'km')!;
+    expect(hops.hops).toBeLessThanOrEqual(km.hops);
+    expect(km.totalKm).toBeLessThanOrEqual(hops.totalKm);
+  });
+
+  it('is symmetric (undirected roads)', () => {
+    const ab = go('Pasto', 'Cúcuta', 'min')!;
+    const ba = go('Cúcuta', 'Pasto', 'min')!;
+    expect(ab.totalMin).toBe(ba.totalMin);
+    expect(ab.via.map((n) => n.name)).toEqual([...ba.via.map((n) => n.name)].reverse());
+  });
+
+  it('every city can reach every other city', () => {
+    const ids = graph.nodes.map((n) => n.id);
+    const origin = ids[0];
+    for (const to of ids.slice(1)) {
+      expect(shortestRoute(graph, origin, to, 'km'), `unreachable ${to}`).not.toBeNull();
+    }
+  });
+
+  it('totals equal the sum of legs', () => {
+    const r = go('Riohacha', 'Ipiales', 'km')!;
+    const km = r.legs.reduce((s, e) => s + e.km, 0);
+    expect(r.totalKm).toBeCloseTo(km, 1);
+  });
+});
