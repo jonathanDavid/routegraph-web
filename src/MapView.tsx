@@ -8,7 +8,7 @@ import type { RoadGraph, RouteResult } from './lib/dijkstra';
 
 maplibregl.setWorkerUrl(maplibreWorkerUrl);
 
-const BG = '#0b1220';
+const BG = '#17191d';
 
 const BASE_STYLE: StyleSpecification = {
   version: 8,
@@ -75,12 +75,12 @@ export function MapView({ graph, route, onPickCity, originId, destId }: Props) {
 
       map.addLayer({
         id: 'edge-lines', type: 'line', source: 'edges',
-        paint: { 'line-color': '#33507a', 'line-width': 1.4, 'line-opacity': 0.85 },
+        paint: { 'line-color': '#3d434c', 'line-width': 1.4, 'line-opacity': 0.85 },
       });
       map.addLayer({
         id: 'route-lines', type: 'line', source: 'edges',
         paint: {
-          'line-color': '#38e1c6',
+          'line-color': '#f7b733',
           'line-width': ['case', ['boolean', ['feature-state', 'onRoute'], false], 4, 0],
           'line-opacity': 0.95,
         },
@@ -91,9 +91,9 @@ export function MapView({ graph, route, onPickCity, originId, destId }: Props) {
           'circle-radius': ['interpolate', ['linear'], ['get', 'pop'], 40000, 3.5, 8000000, 9],
           'circle-color': [
             'case',
-            ['boolean', ['feature-state', 'endpoint'], false], '#38e1c6',
-            ['boolean', ['feature-state', 'onRoute'], false], '#9ad8ff',
-            '#5b7ba8',
+            ['boolean', ['feature-state', 'endpoint'], false], '#f7b733',
+            ['boolean', ['feature-state', 'onRoute'], false], '#f2e8d5',
+            '#6d7681',
           ],
           'circle-stroke-color': BG,
           'circle-stroke-width': 1.5,

@@ -1,10 +1,13 @@
+/* Road palette: warm asphalt grays, Colombian road-sign amber, lane-marking
+   off-whites. Deliberately NOT the navy+teal of the other portfolio apps. */
 :root {
-  --bg: #0b1220;
-  --panel: #121b2e;
-  --ink: #e6edf7;
-  --muted: #8fa3c0;
-  --line: #24334d;
-  --teal: #38e1c6;
+  --bg: #17191d;
+  --panel: #1e2126;
+  --ink: #edeae3;
+  --muted: #9a978e;
+  --line: #31353c;
+  --amber: #f7b733;
+  --amber-ink: #241b04;
 }
 
 * { box-sizing: border-box; }
@@ -15,15 +18,15 @@ body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-
 .map-container { position: absolute; inset: 0; }
 
 .city-label {
-  font-size: 0.68rem; font-weight: 600; color: #cfe0f5; white-space: nowrap;
+  font-size: 0.68rem; font-weight: 600; color: #ddd8cd; white-space: nowrap;
   pointer-events: none;
-  text-shadow: 0 0 3px #0b1220, 0 1px 2px rgba(0,0,0,0.9);
+  text-shadow: 0 0 3px #17191d, 0 1px 2px rgba(0,0,0,0.9);
 }
 
 .panel {
   position: absolute; top: 0; right: 0; bottom: 0;
-  width: 380px; max-width: 92vw; overflow-y: auto;
-  background: rgba(14, 21, 37, 0.92); backdrop-filter: blur(8px);
+  width: 380px; max-width: 92vw; overflow-y: auto; overflow-x: hidden;
+  background: rgba(24, 26, 30, 0.93); backdrop-filter: blur(8px);
   border-left: 1px solid var(--line);
   padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem;
 }
@@ -35,9 +38,12 @@ body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-
   padding: 0.8rem 0.9rem;
 }
 
+/* min-width: 0 lets the flex children shrink — without it the selects
+   overflow and the "To" control clips off the panel edge. */
 .row { display: flex; gap: 0.6rem; }
-.row label { flex: 1; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.72rem; color: var(--muted); }
+.row label { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.72rem; color: var(--muted); }
 .row select {
+  width: 100%; min-width: 0;
   background: var(--bg); color: var(--ink); border: 1px solid var(--line);
   border-radius: 8px; padding: 0.45rem 0.5rem; font-size: 0.85rem;
 }
@@ -47,24 +53,27 @@ body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-
 
 .modes { display: flex; gap: 0.4rem; margin-top: 0.6rem; }
 .modes button {
-  flex: 1; background: var(--bg); color: var(--muted);
+  flex: 1; min-width: 0; background: var(--bg); color: var(--muted);
   border: 1px solid var(--line); border-radius: 8px;
-  padding: 0.45rem 0.3rem; font-size: 0.75rem; cursor: pointer;
+  padding: 0.45rem 0.3rem; font-size: 0.73rem; cursor: pointer;
 }
-.modes button.on { color: #06251f; background: var(--teal); border-color: var(--teal); font-weight: 700; }
+.modes button.on { color: var(--amber-ink); background: var(--amber); border-color: var(--amber); font-weight: 700; }
 
 .totals { display: flex; justify-content: space-around; font-size: 0.85rem; color: var(--muted); }
-.totals strong { color: var(--teal); font-size: 1.15rem; margin-right: 0.2rem; }
+.totals strong { color: var(--amber); font-size: 1.15rem; margin-right: 0.2rem; }
 
 .via { list-style: none; margin: 0.7rem 0 0; padding: 0; }
 .via li { position: relative; padding: 0 0 0.15rem 1.1rem; }
 .via li::before {
   content: ''; position: absolute; left: 0.28rem; top: 0.42rem;
-  width: 7px; height: 7px; border-radius: 50%; background: var(--teal);
+  width: 7px; height: 7px; border-radius: 50%; background: var(--amber);
 }
 .via li:not(:last-child)::after {
   content: ''; position: absolute; left: 0.46rem; top: 0.85rem; bottom: -0.35rem;
-  width: 2px; background: var(--line);
+  width: 2px;
+  /* dashed lane-marking connector */
+  background: repeating-linear-gradient(180deg, var(--muted) 0 4px, transparent 4px 8px);
+  opacity: 0.5;
 }
 .via-city { font-size: 0.85rem; font-weight: 600; }
 .via-leg { display: block; color: var(--muted); font-size: 0.68rem; padding: 0.1rem 0 0.45rem; }
@@ -72,14 +81,14 @@ body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-
 .cypher h2 { margin: 0; font-size: 0.8rem; }
 .cypher-head { display: flex; flex-direction: column; gap: 0.25rem; }
 .engine { font-size: 0.68rem; color: var(--muted); }
-.engine--live { color: var(--teal); }
+.engine--live { color: var(--amber); }
 .cypher pre {
   margin: 0.6rem 0 0; padding: 0.6rem 0.7rem; overflow-x: auto;
   background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
-  font-size: 0.66rem; line-height: 1.55; color: #a8d3ff;
+  font-size: 0.66rem; line-height: 1.55; color: #ffd98a;
 }
 .link {
-  margin-top: 0.6rem; background: none; border: 0; color: var(--teal);
+  margin-top: 0.6rem; background: none; border: 0; color: var(--amber);
   font-size: 0.72rem; cursor: pointer; padding: 0; text-align: left;
 }
 .conn { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.5rem; }
@@ -89,14 +98,14 @@ body { background: var(--bg); color: var(--ink); font-family: system-ui, -apple-
 }
 .conn-actions { display: flex; gap: 0.5rem; }
 .conn-actions button {
-  background: var(--teal); color: #06251f; border: 0; border-radius: 8px;
+  background: var(--amber); color: var(--amber-ink); border: 0; border-radius: 8px;
   padding: 0.4rem 0.9rem; font-size: 0.75rem; font-weight: 700; cursor: pointer;
 }
 .conn-actions button:last-child:not(:first-child) { background: var(--bg); color: var(--muted); border: 1px solid var(--line); }
-.conn a { color: var(--teal); }
+.conn a { color: var(--amber); }
 
 .src { color: var(--muted); font-size: 0.62rem; line-height: 1.6; margin-top: auto; }
-.src a { color: var(--teal); text-decoration: none; }
+.src a { color: var(--amber); text-decoration: none; }
 
 @media (max-width: 700px) {
   .panel { width: 100vw; max-width: 100vw; top: auto; max-height: 55vh; border-left: 0; border-top: 1px solid var(--line); }
