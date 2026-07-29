@@ -4,6 +4,9 @@ import type { StyleSpecification, MapLayerMouseEvent } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 // Vite rewrites MapLibre's default worker URL to a 404 — hand it a bundled one.
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
+// Colombia's department boundaries (DANE MGN 2018, simplified + rounded) —
+// a 43 KB backdrop so the network sits on the real country, key-less.
+import colombiaDeptos from './data/colombia-deptos.json';
 import type { RoadGraph, RouteResult } from './lib/dijkstra';
 
 maplibregl.setWorkerUrl(maplibreWorkerUrl);
@@ -69,6 +72,17 @@ export function MapView({ graph, route, onPickCity, originId, destId }: Props) {
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left');
 
     map.on('load', () => {
+      // Country backdrop first — everything else draws above it.
+      map.addSource('colombia', { type: 'geojson', data: colombiaDeptos as never });
+      map.addLayer({
+        id: 'country-fill', type: 'fill', source: 'colombia',
+        paint: { 'fill-color': '#1f2228', 'fill-opacity': 1 },
+      });
+      map.addLayer({
+        id: 'depto-borders', type: 'line', source: 'colombia',
+        paint: { 'line-color': '#2b2f36', 'line-width': 0.8 },
+      });
+
       const { edges, nodes } = graphToGeoJSON(graph);
       map.addSource('edges', { type: 'geojson', data: edges, promoteId: 'key' });
       map.addSource('nodes', { type: 'geojson', data: nodes, promoteId: 'id' });
