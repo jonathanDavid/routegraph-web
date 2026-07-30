@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T05:02:55.742Z",
+  "generatedAt": "2026-07-30T06:13:01.027Z",
   "sources": {
     "cities": "DANE DIVIPOLA codes; city-center coordinates (WGS84)",
     "roads": "Curated Rutas Nacionales corridors (INVIAS nomenclature)",
@@ -13052,7 +13052,7 @@
       "to": "68001",
       "route": "RN45A/62 alterna (Bogotá–Bucaramanga, vía Chiquinquirá–Barbosa)",
       "km": 405.8,
-      "min": 351,
+      "min": 445,
       "path": [
         [
           -74.072,
@@ -13194,13 +13194,14 @@
           -73.123,
           7.119
         ]
-      ]
+      ],
+      "estimated": true
     },
     {
       "from": "11001",
       "to": "50001",
       "route": "Vía a Choachí (Bogotá–Villavicencio, carretera antigua)",
-      "km": 143.3,
+      "km": 109,
       "min": 172,
       "path": [
         [
@@ -13427,7 +13428,8 @@
           -73.627,
           4.142
         ]
-      ]
+      ],
+      "estimated": true
     },
     {
       "from": "11001",
@@ -13972,8 +13974,8 @@
       "from": "76892",
       "to": "76109",
       "route": "Vía Simón Bolívar (Yumbo–Buenaventura, carretera antigua vía Dagua)",
-      "km": 105.4,
-      "min": 124,
+      "km": 96,
+      "min": 158,
       "path": [
         [
           -76.496,
@@ -14295,7 +14297,8 @@
           -77.031,
           3.88
         ]
-      ]
+      ],
+      "estimated": true
     }
   ]
 }
