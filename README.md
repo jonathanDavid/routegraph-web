@@ -29,7 +29,7 @@ database fits routing.
 ```bash
 npm install
 npm run dev      # demo mode works immediately
-npm test         # 6 tests: corridor pins, symmetry, reachability, leg sums
+npm test         # 7 tests: corridor pins, mode divergence, symmetry, reachability, leg sums
 
 # optional live mode:
 #   in routegraph-db:  docker compose up -d && NEO4J_PASSWORD=routegraph npm run seed

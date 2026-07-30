@@ -10,8 +10,21 @@ const go = (from: string, to: string, mode: 'hops' | 'km' | 'min') =>
 describe('demo dijkstra over the real graph', () => {
   it('matches the seeded Neo4j smoke answer: Bogotá→Santa Marta by km', () => {
     const r = go('Bogotá', 'Santa Marta', 'km')!;
-    expect(r.via.map((n) => n.name)).toEqual(['Bogotá', 'Tunja', 'Bucaramanga', 'Aguachica', 'Bosconia', 'Ciénaga', 'Santa Marta']);
-    expect(Math.round(r.totalKm)).toBe(971); // the real Ruta del Sol corridor
+    // The Chiquinquirá–Barbosa alterna (v1.1 secondary corridors) shaves the
+    // old via-Tunja Ruta del Sol total from 971 km to 956 km.
+    expect(r.via.map((n) => n.name)).toEqual(['Bogotá', 'Bucaramanga', 'Aguachica', 'Bosconia', 'Ciénaga', 'Santa Marta']);
+    expect(Math.round(r.totalKm)).toBe(956);
+  });
+
+  it('the three criteria give three DIFFERENT routes where corridors compete', () => {
+    // v1.1's reason to exist: secondary/alternate corridors make the modes
+    // disagree. Cali→Yopal: shortest-km climbs via the Transversal del Sisga,
+    // fastest-time swings through Villavicencio, fewest-legs rides the
+    // express trunks through Medellín.
+    const keys = (['hops', 'km', 'min'] as const).map((m) =>
+      go('Cali', 'Yopal', m)!.via.map((n) => n.name).join('>')
+    );
+    expect(new Set(keys).size).toBe(3);
   });
 
   it('adjacent cities route directly', () => {
